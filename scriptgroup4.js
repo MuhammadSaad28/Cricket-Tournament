@@ -1,15 +1,15 @@
-let teamsData1 = [
-    { name: "Lions", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
-    { name: "Warriors", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
-    { name: "Avengers", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
+let teamsData4 = [
+    { name: "Wolves", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
+    { name: "Thunder", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
+    { name: "Markhor", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
     
     // Add other teams' data here
 ];
 
-let matchSchedule1 = [
-    { match: 1, team1: "Lions", team2: "Avengers", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 2, team1: "Warriors", team2: "Avengers", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 3, team1: "Lions", team2: "Warriors", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+let matchSchedule4 = [
+    { match: 1, team1: "Markhor", team2: "Wolves", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+    { match: 2, team1: "Thunder", team2: "Markhor", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+    { match: 3, team1: "Wolves", team2: "Thunder", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
     
     // Add other match data here
 ];
@@ -26,7 +26,7 @@ function updatePointsTable() {
     pointsTableBody.innerHTML = "";
 
     // Sort teams based on points (highest to lowest) and net run rate (highest to lowest)
-    teamsData1.sort((a, b) => {
+    teamsData4.sort((a, b) => {
         if (b.points !== a.points) {
             return b.points - a.points; // Sort by points (highest to lowest)
         } else {
@@ -36,7 +36,7 @@ function updatePointsTable() {
         }
     });
 
-    teamsData1.forEach(team => {
+    teamsData4.forEach(team => {
         const { name, matchesPlayed, matchesWon, matchesTied, matchesLost, points, totalRunsScored, totalOversFaced, totalRunsConceded, totalOversBowled } = team;
         const netRunRate = calculateNetRunRate(totalRunsScored, totalOversFaced, totalRunsConceded, totalOversBowled).toFixed(2);
 
@@ -58,12 +58,12 @@ function updatePointsTable() {
 
 
 
-function updateMatchSchedule1() {
-    const matchSchedule1Body = document.getElementById("match-schedule-body");
+function updateMatchSchedule4() {
+    const matchSchedule4Body = document.getElementById("match-schedule-body");
   
-    matchSchedule1Body.innerHTML = "";
+    matchSchedule4Body.innerHTML = "";
   
-    matchSchedule1.forEach(match => {
+    matchSchedule4.forEach(match => {
       const { match: matchNumber, team1, team2, result, team1Score, team2Score, team1Overs, team2Overs, team1Wickets, team2Wickets, submitted } = match;
   
       const row = document.createElement("tr");
@@ -86,7 +86,7 @@ function updateMatchSchedule1() {
       </td>
     `;
   
-      matchSchedule1Body.appendChild(row);
+      matchSchedule4Body.appendChild(row);
     });
   
     // Add event listeners to the edit and submit buttons
@@ -149,7 +149,7 @@ function addSubmitEventListeners() {
             const team2WicketsValue = parseInt(team2Wickets.textContent);
 
             // Check if the match has already been submitted
-            const match = matchSchedule1.find(match => match.match === matchNumber);
+            const match = matchSchedule4.find(match => match.match === matchNumber);
             if (match && !match.submitted) {
                 // Update match result in the match schedule
                 match.team1Score = team1ScoreValue;
@@ -162,7 +162,7 @@ function addSubmitEventListeners() {
                 match.submitted = true;
 
                 // Update team data based on the match result
-                teamsData1.forEach(team => {
+                teamsData4.forEach(team => {
                     if (team.name === match.team1) {
                         team.matchesPlayed += 1;
                         team.totalRunsScored += team1ScoreValue;
@@ -201,7 +201,7 @@ function addSubmitEventListeners() {
                 });
 
                 updatePointsTable();
-                updateMatchSchedule1();
+                updateMatchSchedule4();
 
                 // Remove the submit button and disable the edit button after recording match result
                 const editButton = row.querySelector(".edit-button");
@@ -218,21 +218,21 @@ function addSubmitEventListeners() {
 
 // Function to save data to local storage
 function saveDataToLocalStorage() {
-    localStorage.setItem("teamsData1", JSON.stringify(teamsData1));
-    localStorage.setItem("matchSchedule1", JSON.stringify(matchSchedule1));
+    localStorage.setItem("teamsData4", JSON.stringify(teamsData4));
+    localStorage.setItem("matchSchedule4", JSON.stringify(matchSchedule4));
   }
   
   // Function to load data from local storage
   function loadDataFromLocalStorage() {
-    const savedTeamsData1 = localStorage.getItem("teamsData1");
-    const savedMatchSchedule1 = localStorage.getItem("matchSchedule1");
+    const savedTeamsData4 = localStorage.getItem("teamsData4");
+    const savedMatchSchedule4 = localStorage.getItem("matchSchedule4");
   
-    if (savedTeamsData1) {
-      teamsData1 = JSON.parse(savedTeamsData1);
+    if (savedTeamsData4) {
+      teamsData4 = JSON.parse(savedTeamsData4);
     }
   
-    if (savedMatchSchedule1) {
-      matchSchedule1 = JSON.parse(savedMatchSchedule1);
+    if (savedMatchSchedule4) {
+      matchSchedule4 = JSON.parse(savedMatchSchedule4);
     }
   }
   
@@ -241,4 +241,4 @@ function saveDataToLocalStorage() {
 
 // Call initial functions to display points table and match schedule
 updatePointsTable();
-updateMatchSchedule1();
+updateMatchSchedule4();

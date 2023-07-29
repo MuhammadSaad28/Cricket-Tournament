@@ -2,119 +2,61 @@ let teamsData2 = [
     { name: "Vipers", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
     { name: "Jaguars", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
     { name: "Phoenix", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
-    { name: "Wolves", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
-    { name: "Thunder", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
-    { name: "Markhor", matchesPlayed: 0, matchesWon: 0, matchesTied: 0, matchesLost: 0, points: 0, totalRunsScored: 0, totalOversFaced: 0, totalWicketsLost: 0, totalRunsConceded: 0, totalOversBowled: 0, totalOpponentWickets: 0 },
+    
     // Add other teams' data here
 ];
 
 let matchSchedule2 = [
-    { match: 1, team1: "Vipers", team2: "Jaguars", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 2, team1: "Phoenix", team2: "Wolves", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 3, team1: "Markhor", team2: "Phoenix", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 4, team1: "Jaguars", team2: "Thunder", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 5, team1: "Vipers", team2: "Wolves", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 6, team1: "Phoenix", team2: "Thunder", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 7, team1: "Vipers", team2: "Markhor", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 8, team1: "Jaguars", team2: "Wolves", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 9, team1: "Wolves", team2: "Thunder", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 10, team1: "Phoenix", team2: "Jaguars", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 11, team1: "Jaguars", team2: "Markhor", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 12, team1: "Markhor", team2: "Vipers", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 13, team1: "Phoenix", team2: "Thunder", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 14, team1: "Wolves", team2: "Markhor", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
-    { match: 15, team1: "Thunder", team2: "Vipers", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+    { match: 1, team1: "Vipers", team2: "Phoenix", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+    { match: 2, team1: "Phoenix", team2: "Jaguars", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+    { match: 3, team1: "Jaguars", team2: "Vipers", result: "", team1Score: 0, team2Score: 0, team1Overs: 0, team2Overs: 0, team1Wickets: 0, team2Wickets: 0, submitted: false },
+    
     // Add other match data here
 ];
 
-// function updatePointsTable() {
-//     const pointsTableBody = document.getElementById("points-table-body");
-
-//     pointsTableBody.innerHTML = "";
-
-//     teamsData2.forEach(team => {
-//         const { name, matchesPlayed, matchesWon, matchesTied, matchesLost, points, totalRunsScored, totalOversFaced, totalWicketsLost, totalRunsConceded, totalOversBowled, totalOpponentWickets } = team;
-
-//         const netRunRate = calculateNetRunRate(totalRunsScored, totalOversFaced, totalRunsConceded, totalOversBowled);
-
-//         const row = document.createElement("tr");
-//         row.innerHTML = `
-//         <td>${name}</td>
-//         <td>${matchesPlayed}</td>
-//         <td>${matchesWon}</td>
-//         <td>${matchesTied}</td>
-//         <td>${matchesLost}</td>
-//         <td>${points}</td>
-//         <td>${netRunRate.toFixed(2)}</td>
-//       `;
-
-//         pointsTableBody.appendChild(row);
-//     });
-// }
 
 
+// Function to calculate the net run rate for a team
+function calculateNetRunRateForTeam(runsScored, oversFaced, runsConceded, oversBowled) {
+    const netRunRate = (runsScored / oversFaced) - (runsConceded / oversBowled);
+    return netRunRate.toFixed(2);
+}
+
+// Updated function to display points table with net run rate
 function updatePointsTable() {
     const pointsTableBody = document.getElementById("points-table-body");
+
+    // Sort teams based on points (highest to lowest) and net run rate (highest to lowest)
+    teamsData2.sort((a, b) => {
+        if (b.points !== a.points) {
+            return b.points - a.points; // Sort by points (highest to lowest)
+        } else {
+            const netRunRateA = calculateNetRunRateForTeam(a.totalRunsScored, a.totalOversFaced, a.totalRunsConceded, a.totalOversBowled);
+            const netRunRateB = calculateNetRunRateForTeam(b.totalRunsScored, b.totalOversFaced, b.totalRunsConceded, b.totalOversBowled);
+            return netRunRateB - netRunRateA; // Sort by net run rate (highest to lowest)
+        }
+    });
 
     pointsTableBody.innerHTML = "";
 
     teamsData2.forEach(team => {
-        const { name, matchesPlayed, matchesWon, matchesTied, matchesLost, points } = team;
+        const { name, matchesPlayed, matchesWon, matchesTied, matchesLost, points, totalRunsScored, totalOversFaced, totalRunsConceded, totalOversBowled } = team;
+        const netRunRate = calculateNetRunRateForTeam(totalRunsScored, totalOversFaced, totalRunsConceded, totalOversBowled);
 
         const row = document.createElement("tr");
         row.innerHTML = `
-      <td>${name}</td>
-      <td>${matchesPlayed}</td>
-      <td>${matchesWon}</td>
-      <td>${matchesTied}</td>
-      <td>${matchesLost}</td>
-      <td>${points}</td>
-    `;
+            <td>${name}</td>
+            <td>${matchesPlayed}</td>
+            <td>${matchesWon}</td>
+            <td>${matchesTied}</td>
+            <td>${matchesLost}</td>
+            <td>${points}</td>
+            <td>${netRunRate}</td>
+        `;
 
         pointsTableBody.appendChild(row);
     });
 }
-
-
-function calculateNetRunRate(runsScored, oversFaced, runsConceded, oversBowled) {
-    return (runsScored / oversFaced) - (runsConceded / oversBowled);
-}
-
-// function updateMatchSchedule() {
-//     const matchScheduleBody = document.getElementById("match-schedule-body");
-
-//     matchScheduleBody.innerHTML = "";
-
-//     matchSchedule2.forEach(match => {
-//       const { match: matchNumber, team1, team2, result, team1Score, team2Score, team1Overs, team2Overs, team1Wickets, team2Wickets, submitted } = match;
-
-//       const row = document.createElement("tr");
-//       row.innerHTML = `
-//         <td>Match ${matchNumber}</td>
-//         <td>${team1}</td>
-//         <td data-value="${team1Score}">${team1Score}</td>
-//         <td data-value="${team1Overs}">${team1Overs}</td>
-//         <td data-value="${team1Wickets}">${team1Wickets}</td>
-//         <td>${team2}</td>
-//         <td data-value="${team2Score}">${team2Score}</td>
-//         <td data-value="${team2Overs}">${team2Overs}</td>
-//         <td data-value="${team2Wickets}">${team2Wickets}</td>
-//         <td>${result}</td>
-//         <td>
-//           <button class="edit-button" data-match="${matchNumber}">&#9998; Edit</button>
-//         </td>
-//         <td>
-//           ${!submitted ? `<button class="submit-button" data-match="${matchNumber}">Submit</button>` : "Submitted"}
-//         </td>
-//       `;
-
-//       matchScheduleBody.appendChild(row);
-//     });
-
-//     // Add event listeners to the edit and submit buttons
-//     addEditEventListeners();
-//     addSubmitEventListeners();
-//   }
 
 
 
